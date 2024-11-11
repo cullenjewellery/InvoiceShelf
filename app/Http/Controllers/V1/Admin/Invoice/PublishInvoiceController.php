@@ -37,7 +37,7 @@ class PublishInvoiceController extends Controller
         $url = route('invoice', ['email_log' => $log->token]);
 
         return response()->json([
-            'url' => $url
+            'url' => $url,
         ]);
 
     }

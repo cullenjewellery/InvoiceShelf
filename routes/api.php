@@ -260,7 +260,7 @@ Route::prefix('/v1')->group(function () {
 
             Route::get('/invoices/{invoice}/send/preview', SendInvoicePreviewController::class);
 
-            Route::get('/invoices/{invoice}/publish', PublishInvoiceController::class);
+            Route::post('/invoices/{invoice}/publish', PublishInvoiceController::class);
 
             Route::post('/invoices/{invoice}/send', SendInvoiceController::class);
 
