@@ -64,6 +64,7 @@ use App\Http\Controllers\V1\Admin\Payment\PaymentMethodsController;
 use App\Http\Controllers\V1\Admin\Payment\PaymentsController;
 use App\Http\Controllers\V1\Admin\Payment\SendPaymentController;
 use App\Http\Controllers\V1\Admin\Payment\SendPaymentPreviewController;
+use App\Http\Controllers\V1\Admin\Payment\PublishPaymentController;
 use App\Http\Controllers\V1\Admin\RecurringInvoice\RecurringInvoiceController;
 use App\Http\Controllers\V1\Admin\RecurringInvoice\RecurringInvoiceFrequencyController;
 use App\Http\Controllers\V1\Admin\Role\AbilitiesController;
@@ -319,6 +320,8 @@ Route::prefix('/v1')->group(function () {
             //----------------------------------
 
             Route::get('/payments/{payment}/send/preview', SendPaymentPreviewController::class);
+
+            Route::post('/payments/{payment}/publish', PublishPaymentController::class);
 
             Route::post('/payments/{payment}/send', SendPaymentController::class);
 
