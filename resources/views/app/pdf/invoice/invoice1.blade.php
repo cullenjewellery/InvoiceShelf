@@ -352,7 +352,9 @@
     <div class="content-wrapper">
         <div style="padding-top: 30px">
             <div class="company-address-container company-address">
-                {!! $company_address !!}
+                <p>{!! $company_address !!}</p>
+                <p>NZBN:&nbsp;{{ $invoice->customer->company->tax_id }}</p>
+                <p>GST number:&nbsp;{{ $invoice->customer->company->vat_id }}</p>
             </div>
 
             <div class="invoice-details-container">
