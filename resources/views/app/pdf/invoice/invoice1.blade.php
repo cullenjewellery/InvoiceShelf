@@ -127,12 +127,6 @@
 
         /* -- Billing -- */
 
-        .billing-address-container {
-            padding-top: 50px;
-            float: left;
-            padding-left: 30px;
-        }
-
         .billing-address-label {
             font-size: 12px;
             line-height: 18px;
@@ -354,18 +348,20 @@
     <div class="content-wrapper">
         <div style="padding-top: 30px">
 
-            <div class="float-left customer-details">
-                <p>{{ $invoice->customer->name }}</p>
-                {{-- TODO: add customer address --}}
+            <div class="float-left billing-address">
+                @if ($billing_address)
+                    <b>Invoice for,</b> <br>
+
+                    {!! $billing_address !!}
+                @endif
             </div>
 
             <div class="float-right company-address">
                 {!! $company_address !!}
 
                 <br>
-                <br>
 
-                <table>
+                <table class="compact">
                     <tr>
                         <td class="attribute-label">NZBN</td>
                         <td class="attribute-value"> &nbsp;{{ $invoice->customer->company->tax_id }}</td>
@@ -390,22 +386,6 @@
             </div>
 
             <div style="clear: both;"></div>
-        </div>
-
-        <div class="billing-address-container billing-address">
-            @if ($billing_address)
-                <b>@lang('pdf_bill_to')</b> <br>
-
-                {!! $billing_address !!}
-            @endif
-        </div>
-
-        <div class="shipping-address-container shipping-address" @if ($billing_address !== '</br>') style="float:left;" @else style="display:block; float:left: padding-left: 0px;" @endif>
-            @if ($shipping_address)
-                <b>@lang('pdf_ship_to')</b> <br>
-
-                {!! $shipping_address !!}
-            @endif
         </div>
 
         <div style="position: relative; clear: both;">
