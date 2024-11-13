@@ -81,8 +81,7 @@
         }
 
         table.compact td {
-            padding-top: 0;
-            padding-bottom: 0;
+            /* TODO: make table line height more compact */
         }
 
         .float-right {
