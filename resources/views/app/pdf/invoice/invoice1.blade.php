@@ -60,10 +60,8 @@
         }
 
         .float-left {
-            padding-top: 15px;
-            padding-left: 30px;
-            float: left;
-            margin-bottom: 2px;
+            float: right;
+            padding: 10px 0 0 30px;
         }
 
         .company-address h1 {
@@ -71,11 +69,9 @@
             line-height: 22px;
             letter-spacing: 0.05em;
             margin-bottom: 0px;
-            margin-top: 10px;
         }
 
         .company-address {
-            margin-top: 16px;
             text-align: left;
             font-size: 12px;
             line-height: 15px;
@@ -87,8 +83,6 @@
         .float-right {
             float: right;
             padding: 10px 30px 0 0;
-            margin-top: 18px;
-            margin-bottom: 2px;
         }
 
         .attribute-label {
@@ -353,18 +347,24 @@
         <div style="padding-top: 30px">
 
             <div class="float-left">
-                <p>{$invoice->customer->name}</p>
+                <p>{{ $invoice->customer->name }}</p>
             </div>
 
             <div class="float-right company-address">
+                {!! $company_address !!}
 
-                <p>{!! $company_address !!}</p>
-                <p>
-                    NZBN:&nbsp;{{ $invoice->customer->company->tax_id }}<br>
-                    GST number:&nbsp;{{ $invoice->customer->company->vat_id }}
-                </p>
+                <br>
+                <br>
 
                 <table>
+                    <tr>
+                        <td class="attribute-label">NZBN</td>
+                        <td class="attribute-value"> &nbsp;{{ $invoice->customer->company->tax_id }}</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute-label">GST number</td>
+                        <td class="attribute-value"> &nbsp;{{ $invoice->customer->company->vat_id }}</td>
+                    </tr>
                     <tr>
                         <td class="attribute-label">@lang('pdf_invoice_number')</td>
                         <td class="attribute-value"> &nbsp;{{ $invoice->invoice_number }}</td>
