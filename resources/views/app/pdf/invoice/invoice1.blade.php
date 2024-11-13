@@ -60,7 +60,7 @@
         }
 
         .float-left {
-            float: right;
+            float: left;
             padding: 10px 0 0 30px;
         }
 
@@ -77,6 +77,14 @@
             line-height: 15px;
             color: #595959;
             width: 280px;
+            word-wrap: break-word;
+        }
+
+        .customer-details {
+            text-align: left;
+            font-size: 12px;
+            line-height: 15px;
+            color: #595959;
             word-wrap: break-word;
         }
 
@@ -346,8 +354,9 @@
     <div class="content-wrapper">
         <div style="padding-top: 30px">
 
-            <div class="float-left">
+            <div class="float-left customer-details">
                 <p>{{ $invoice->customer->name }}</p>
+                {{-- TODO: add customer address --}}
             </div>
 
             <div class="float-right company-address">
