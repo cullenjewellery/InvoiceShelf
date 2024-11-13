@@ -80,12 +80,9 @@
             word-wrap: break-word;
         }
 
-        .customer-details {
-            text-align: left;
-            font-size: 12px;
-            line-height: 15px;
-            color: #595959;
-            word-wrap: break-word;
+        table.compact td {
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .float-right {
@@ -147,7 +144,6 @@
             font-size: 12px;
             line-height: 15px;
             color: #595959;
-            padding: 45px 0px 0px 30px;
             margin: 0px;
             width: 160px;
             word-wrap: break-word;
@@ -350,8 +346,6 @@
 
             <div class="float-left billing-address">
                 @if ($billing_address)
-                    <b>Invoice for,</b> <br>
-
                     {!! $billing_address !!}
                 @endif
             </div>
