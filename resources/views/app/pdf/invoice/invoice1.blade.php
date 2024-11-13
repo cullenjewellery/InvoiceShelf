@@ -59,15 +59,14 @@
             padding-bottom: 20px;
         }
 
-        .company-address-container {
+        .float-left {
             padding-top: 15px;
             padding-left: 30px;
             float: left;
-            width: 30%;
             margin-bottom: 2px;
         }
 
-        .company-address-container h1 {
+        .company-address h1 {
             font-size: 15px;
             line-height: 22px;
             letter-spacing: 0.05em;
@@ -85,10 +84,11 @@
             word-wrap: break-word;
         }
 
-        .invoice-details-container {
+        .float-right {
             float: right;
             padding: 10px 30px 0 0;
             margin-top: 18px;
+            margin-bottom: 2px;
         }
 
         .attribute-label {
@@ -351,15 +351,19 @@
 
     <div class="content-wrapper">
         <div style="padding-top: 30px">
-            <div class="company-address-container company-address">
+
+            <div class="float-left">
+                <p>{$invoice->customer->name}</p>
+            </div>
+
+            <div class="float-right company-address">
+
                 <p>{!! $company_address !!}</p>
                 <p>
                     NZBN:&nbsp;{{ $invoice->customer->company->tax_id }}<br>
                     GST number:&nbsp;{{ $invoice->customer->company->vat_id }}
                 </p>
-            </div>
 
-            <div class="invoice-details-container">
                 <table>
                     <tr>
                         <td class="attribute-label">@lang('pdf_invoice_number')</td>
