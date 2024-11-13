@@ -297,7 +297,11 @@
                 @endif
                 </td>
                 <td width="50%" class="header-section-right company-details company-address">
-                    {!! $company_address !!}
+                    <p>{!! $company_address !!}</p>
+                    <p>
+                        NZBN:&nbsp;{{ $invoice->customer->company->tax_id }}<br>
+                        GST number:&nbsp;{{ $invoice->customer->company->vat_id }}
+                    </p>
                 </td>
             </tr>
         </table>
